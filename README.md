@@ -1,2 +1,2 @@
-# mern
+# MERN
 The MERN Project
