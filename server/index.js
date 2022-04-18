@@ -17,13 +17,3 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
     .catch((error) => console.log(error.message));
 
 mongoose.set('useFindAndModify', false);
-
-//
-// const URI = process.env.CONNECTION_URL;
-// mongoose.connect(URI, { useUnifiedTopology: true }
-// );
-//
-// const connection = mongoose.connection;
-// connection.once('open', () => {
-//     console.log("MongoDB database connection established successfully");
-// } )
