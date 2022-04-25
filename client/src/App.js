@@ -20,10 +20,6 @@ function App() {
                             {/*<Posts/>*/}
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi consequuntur cum
-                            ea, earum esse ex fugit ipsum iure magni officiis optio pariatur quis quisquam quos.
-                            Accusantium atque dicta dolore laudantium voluptates! Adipisci aliquid aspernatur deleniti
-                            exercitationem fugiat in ipsum modi, nihil quae quaerat quas rem sit tenetur vero vitae!
                             {/*<Form/>*/}
                         </Grid>
                     </Grid>
