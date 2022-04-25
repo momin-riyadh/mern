@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import memories from './images/memories.png';
@@ -15,12 +14,12 @@ function App() {
             <Grow in>
                 <Container>
                     <Grid container justify={"space-between"} alignItems={"stretch"} spacing={"3"}>
-                        <Grid item xs={12} sm={7}>
+                        <Grid item xs={12} sm={8}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, porro!
                             {/*<Posts/>*/}
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            {/*<Form/>*/}
+                            <Form/>
                         </Grid>
                     </Grid>
                 </Container>
