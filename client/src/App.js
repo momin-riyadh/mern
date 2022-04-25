@@ -1,6 +1,8 @@
 import './App.css';
 import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import memories from './images/memories.png';
+import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form'
 
 function App() {
     return (
@@ -15,8 +17,7 @@ function App() {
                 <Container>
                     <Grid container justify={"space-between"} alignItems={"stretch"} spacing={"3"}>
                         <Grid item xs={12} sm={8}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, porro!
-                            {/*<Posts/>*/}
+                            <Posts/>
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Form/>
