@@ -14,9 +14,13 @@ const Form = () => {
     const handleSubmit = () => {
 
     }
+
+    const clear = () => {
+
+    }
     return (
         <Paper>
-            <form autoComplete="off" noValidate className={classes.form} onSubmit={handleSubmit}>
+            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">Creating a Memory</Typography>
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}
                            onChange={(e) => setPostData({...postData, creator: e.target.value})}
@@ -32,13 +36,13 @@ const Form = () => {
                 />
                 <div className={classes.fileInput}>
                     <FileBase
-                    type="file"
-                    multiple={false}
-                    onDone={({base64})=> setPostData({...postData, selectedFile: base64})}
+                        type="file"
+                        multiple={false}
+                        onDone={({base64}) => setPostData({...postData, selectedFile: base64})}
                     />
                 </div>
-                <Button className={classes.buttonSubmit} variant="container" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                <Button className={classes.buttonSubmit} variant="container" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                <Button variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
             </form>
         </Paper>
     )
