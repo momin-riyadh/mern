@@ -18,7 +18,7 @@ const Post = ({post}) => {
                     {post.creator}
                 </Typography>
                 <Typography varient={"body2"}>
-                    {moment(post.createdAt).formNow()}
+                    {moment(post.createdAt).fromNow()}
                 </Typography>
             </div>
 
