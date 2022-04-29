@@ -27,10 +27,10 @@ function App() {
             <Grow in>
                 <Container>
                     <Grid container justify={"space-between"} alignItems={"stretch"} spacing={"3"}>
-                        <Grid item xs={12} sm={8}>
+                        <Grid item xs={12} sm={9}>
                             <Posts/>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
+                        <Grid item xs={12} sm={3}>
                             <Form/>
                         </Grid>
                     </Grid>
