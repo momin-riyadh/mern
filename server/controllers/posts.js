@@ -1,8 +1,9 @@
 import express from 'express';
 import PostMessage from "../models/postMessage.js";
 import mongoose from "mongoose";
-
 const router = express.Router;
+
+
 // Get Post
 export const getPosts = async (req, res) => {
     try {
