@@ -10,31 +10,33 @@ const Form = ({currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({
         creator: '', title: '', message: '', tags: '', selectedFile: ''
     })
-    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+    const post = useSelector((state) => currentId ? state.posts.find((message) => message._id === currentId) : null);
     const classes = useStyles();
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (post) setPostData(post);
     }, [post]);
 
     const clear = () => {
-        setCurrentId(null);
+        setCurrentId(0);
         setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (currentId === 0) {
-            dispatch(updatePost(currentId, postData));
-        } else {
             dispatch(createPost(postData));
+            clear()
+        } else {
+            dispatch(updatePost(currentId, postData));
+            clear();
         }
-        clear();
     }
 
 
     return (
-        <Paper>
+        <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{!currentId ? 'Creating' : 'Editing'} a Memory</Typography>
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}
