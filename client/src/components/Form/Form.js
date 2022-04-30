@@ -14,24 +14,31 @@ const Form = ({currentId, setCurrentId}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     useEffect(() => {
-        if(post) setPostData(post);
+        if (post) setPostData(post);
     }, [post]);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (currentId) {
-            dispatch(updatePost(currentId, postData));
-        } else {
-            dispatch(createPost(postData));
-        }
-    }
 
     const clear = () => {
+        setCurrentId(0);
+        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (currentId === 0) {
+            dispatch(updatePost(currentId, postData));
+            clear()
+        } else {
+            dispatch(createPost(postData));
+            clear()
+        }
 
     }
+
+
     return (
         <Paper>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">Creating a Memory</Typography>
+                <Typography variant="h6">{!currentId ? 'Creating' : 'Editing'} a Memory</Typography>
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}
                            onChange={(e) => setPostData({...postData, creator: e.target.value})}
                 />
@@ -42,7 +49,7 @@ const Form = ({currentId, setCurrentId}) => {
                            onChange={(e) => setPostData({...postData, message: e.target.value})}
                 />
                 <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}
-                           onChange={(e) => setPostData({...postData, tags: e.target.value})}
+                           required onChange={(e) => setPostData({...postData, tags: e.target.value})}
                 />
                 <div className={classes.fileInput}>
                     <FileBase
