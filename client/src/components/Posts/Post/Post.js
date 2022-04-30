@@ -6,7 +6,7 @@ import MoreHorizIcons from '@material-ui/icons/MoreHoriz';
 import moment from "moment";
 import useStyles from './styles';
 
-const Post = ({post}) => {
+const Post = ({post, setCurrentId}) => {
     const classes = useStyles()
     return (
         <Card className={classes.card}>
@@ -23,8 +23,7 @@ const Post = ({post}) => {
             </div>
 
             <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => {
-                }}>
+                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
                     <MoreHorizIcons fontSize="default"/>
                 </Button>
             </div>
@@ -41,15 +40,17 @@ const Post = ({post}) => {
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                    <Button size="small" color="primary" onClick={() =>{}}>
-                        <ThumbUpAltIcon fontSize="small"/>
-                        Like
-                        {post.likeCount}
-                    </Button>
-                <Button size="small" color="primary" onClick={() =>{}}>
-                        <DeleteIcon fontSize="small"/>
-                        Delete
-                    </Button>
+                <Button size="small" color="primary" onClick={() => {
+                }}>
+                    <ThumbUpAltIcon fontSize="small"/>
+                    Like
+                    {post.likeCount}
+                </Button>
+                <Button size="small" color="primary" onClick={() => {
+                }}>
+                    <DeleteIcon fontSize="small"/>
+                    Delete
+                </Button>
             </CardActions>
         </Card>
     )
