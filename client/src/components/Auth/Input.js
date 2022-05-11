@@ -6,23 +6,23 @@ const Input = ({name, handleChange, label, autoFocus, type, handleShowPassword, 
     return (
         <Grid item xs={12} sm={half ? 6 : 12}>
             <TextField
-            name={name}
-            onChange={handleChange}
-            varient="outlined"
-            fullWidth
-            label={label}
-            autoFocus={autoFocus}
-            type={type}
-            inputProps={name==='password' && {
-                endAdornment:(
-                    <InputAdornment position="end">
-                        <IconButton onClick={handleShowPassword}>
-                            {type==="password"? <Visibility/>:<VisibilityOff/>}
+                name={name}
+                onChange={handleChange}
+                varient="outlined"
+                fullWidth
+                label={label}
+                autoFocus={autoFocus}
+                type={type}
+                inputProps={name === 'password' ? {
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <IconButton onClick={handleShowPassword}>
+                                {type === "password" ? <Visibility/> : <VisibilityOff/>}
                             </IconButton>
-                    </InputAdornment>
+                        </InputAdornment>
 
-                )
-            }}
+                    ),
+                } : null}
             />
         </Grid>
     )
