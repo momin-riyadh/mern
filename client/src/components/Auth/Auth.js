@@ -28,7 +28,7 @@ const Auth = () => {
         handleShowPassword(false)
     }
 
-    const googleSuccess = async (res) => {
+    const googleSuccess = (res) => {
         console.log(res);
     }
     const googleFailure = (error) => {
